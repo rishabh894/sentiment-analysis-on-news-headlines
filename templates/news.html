@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>News Analysis</title>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    
+  </body>
+  <!-- Footer -->
+</html>
+{% block body %}
+<style>
+body {
+  background: url('https://images.unsplash.com/photo-1593689217914-19621b0eac82?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+</style>
+
+      
+      {% if heading  %}
+      <h1 class="font-weight-dark text-center py-3">{{news}} News</h1>
+      <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Headline</th>
+      <th scope="col">News</th>
+      <th scope="col">Sentiment</th>
+      <!-- <th scope="col">CommentHead</th>
+      <th scope='col'>Comment</th> -->
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in range(0,len) %}
+      <tr>
+          <td>{{heading[i]}}</td>
+         <td>{{stories[i]}}</td>
+         <td>{{lists[i]}}</td>
+       {% endfor %}
+    </tr>
+    
+  </tbody>
+</table>
+<h1>Average Sentiment of {{news}} news is : {{AvgSentiment}}</h1>
+{% else %}
+<div style="height: 155px"></div>
+{% endif %}
+      
+    </div>
+  </div>
+</div>
+{% endblock body %}
