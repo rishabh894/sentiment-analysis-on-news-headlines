@@ -13,9 +13,9 @@ def newsAnalysis(dataDiX):
     return sent, sentVal
 
 def find_Sentiment(val):                                                                                                               
-    if val<=0.1 and val>-0.1:
+    if val<=0.0 and val>-0.0:
         return 'Neutral'
-    elif val>0.1:
+    elif val>0.0:
         return 'Positive'
     else:
         return 'Negative'
